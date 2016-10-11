@@ -9,6 +9,7 @@ def kill(path):
         print(path)
 
 def kill_cycle():
+    #убирает незадействованные,  пустые папки и черновой файл
     folders = ['plain', 'mystem-xml', 'mystem-plain']
     for fol in folders:
         for year in range(2009, 2017):
@@ -19,8 +20,10 @@ def kill_cycle():
             n_row = './Istoki-Bashkortostan/%s/%d'
             n_adr = n_row % (fol, year)
             kill(n_adr)
+    os.remove('./noheader.txt')
 
 def header_off(path):
+    #убирает шапки с собачками
     f = open(path, 'r', encoding='UTF-8')
     
     lst = f.readlines()
@@ -72,12 +75,11 @@ def mystem():
 
     
 def add_csv(way, year):
-    #print('way', way)
+    #записывает информацию в csv-файл
     fi = open(way, 'r', encoding = 'UTF-8')
     arr = fi.read()
     res = re.search('@au (.+?)\n@ti (.+?)\n@da (.+?)\n@topic (.+?)\n@url (.+?)\n', arr)
     info = res.group(1, 2, 3, 4, 5)
-    #print(info)
     fi.close()
     f = open('Istoki-Bashkortostan/metadata.csv', 'a', encoding = 'UTF-8')
     row = '%s\t%s\t\t\t%s\t%s\tпублицистика\t\t\t%s\t\tнейтральный\tн-возраст\tн-уровень\tреспубликанская\t%s\tИстоки\t\t%s\tгазета\tРоссия\tреспублика Башкорстостан\tru\n'
@@ -96,7 +98,6 @@ def clean(t):
     main_part = res.group(1)
     reg_tag = re.compile('<.*?>', flags=re.DOTALL)
     no_tag = reg_tag.sub("", main_part)
-    #no_sign = ''
     signs = {
         '&laquo;' : '«',
         '&raquo;' : '»',
@@ -121,23 +122,19 @@ def get_author(t):
     auth = auth.strip('\t')
     if auth == 'Собственный корреспондент':
         auth = 'None'
-    #print('author is allright')
     return auth
 
 def get_title(t):
-    #rg = re.compile('.*?', flags=re.DOTALL)
     res = re.search("<div class='title'>\r\n(.*?)</div>", t)
     title = res.group(1)
     title = title.strip(' ')
     title = title.strip('\t')
-    #print('title ok')
     return title
 
 def get_topic(t):
     res = re.search('<div class=\'razdel\'>(.*?)</div>', t)
     topic = res.group(1)
     topic = topic.strip('\t ')
-    #print('topic ok')
     return topic
 
 
@@ -152,7 +149,6 @@ def get_text(text, remember):
     clean_t = clean(text)
     row = '@au %s\n@ti %s\n@da %s\n@topic %s\n@url %s\n\n%s'
     plain_t = row % (auth, title, da, top, url, clean_t)
-    #print('clean af', end = ' ')
     return plain_t
 
 
@@ -188,9 +184,7 @@ def get_date(t):
 
 
 def get_html(url):
-    # на сайте много страниц, которые вроде существуют, но статей на них нет.
-    # зато есть фраза "Элемент не найден!", по которой можно определить ненужные
-    # нам страницы и не тратить на них время
+#борется с ошибками и страницами без статей
     remember_url = ''
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
     req = urllib.request.Request(url, headers={'User-Agent':user_agent})
@@ -205,7 +199,7 @@ def get_html(url):
         print('item', end=' ')
         return plain_t, date
     
-    for n in range(2187, 3750):#вообще статей аж до номера 5203, но для пробы достаточно будет двух
+    for n in range(70, 513):
         row = 'http://istoki-rb.ru/archive.php?article=%d'
         n_url = row % n
 
@@ -229,7 +223,7 @@ def make_dir(d_name):
 
 
 def all_dirs():
-    #создает все необходимые директории
+#создает все необходимые директории
     folders = ['plain', 'mystem-xml', 'mystem-plain']
     for fol in folders:
         for year in range(2009, 2017):
@@ -240,10 +234,13 @@ def all_dirs():
     print('directories')
     
 def main():
-    #all_dirs()
-    #make_csv()
-    #create_dict()
-    #mystem()
+#если программа полностью выполнила одну или неск-ко из этих функций,
+#но потом была приостановлена, можно просто закомментировать выполненное,
+#и программа доделает недоделанное
+    all_dirs()
+    make_csv()
+    create_dict()
+    mystem()
     kill_cycle()
 
 if __name__=='__main__':
