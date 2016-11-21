@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Статистика</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Статистика</h1>
+<table>
+	<thead>
+	<tr>
+		<th scope="col">Диалект</th>
+		<th colspan="5" scope="col">Орфография</th>
+		<th colspan="2" scope="col">Лексика</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th scope="col">our-or</th>
+		<th scope="col">gue-g</th>
+		<th scope="col">re-er</th>
+		<th scope="col">ise-ize</th>
+		<th scope="col">другое</th>
+		<th scope="col">русс-англ</th>
+		<th scope="col">англ-картинка</th>
+	</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		  <th scope="row">BrEn</th>
+		  <td>{{ our_n }}</td>
+		  <td>{{ gue_n }}</td>
+		  <td>{{ re_n }}</td>
+		  <td>{{ ise_n }}</td>
+		  <td>{{ randombr_n }}</td>
+		  <td>{{ lex1br_n }}</td>
+		  <td>{{ lex2br_n }}</td>
+	  </tr>
+	  <tr>
+		  <th scope="row">AmEn</th>
+		  <td>{{ or_n }}</td>
+		  <td>{{ g_n }}</td>
+		  <td>{{ er_n }}</td>
+		  <td>{{ ize_n }}</td>
+		  <td>{{ randomam_n }}</td>
+		  <td>{{ lex1am_n }}</td>
+		  <td>{{ lex2am_n }}</td>
+	  </tr>
+	</tbody>
+</table>
+<table>
+	<thead>
+	<tr>
+		<th></th>
+		<th scope="col">Spelling</th>
+		<th scope="col">Vocabulary</th>
+		<th scope="col">Total</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">British Dialect</th>
+		<td>{{ our_n+gue_n+re_n+ise_n+randombr_n }}</td>
+		<td>{{ lex1br_n+lex2br_n }}</td>
+		<td>{{ our_n+gue_n+re_n+ise_n+randombr_n+lex1br_n+lex2br_n }}</td>
+	</tr>
+	<tr>
+		<th scope="row">American Dialect</th>
+		<td>{{ or_n+g_n+er_n+ize_n+randomam_n }}</td>
+		<td>{{ lex1am_n+lex2am_n }}</td>
+		<td>{{ or_n+g_n+er_n+ize_n+randomam_n+lex1am_n+lex2am_n }}</td>
+	</tr>
+	</tbody>
+</table>
+
+<a href="{{ again_refer }}">Заполнить анкету еще раз</a>
+<a href="{{ search_refer }}">Перейти к поиску по введенным данным</a>
+<a href="{{ json_refer }}">Все введенные данные в формате JSON</a>
+
+</body>
+</html>

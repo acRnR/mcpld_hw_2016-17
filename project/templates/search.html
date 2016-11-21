@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Поиск</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1>Поиск</h1>
+<form action="/results">
+	<div class="question">
+		<p>Искать ответы респондентов:</p>
+		<div class="radiobutton">
+			<input type="radio" name="searchstudy" value="byname">по имени:<input type="text" name="searchname"><br>
+		</div>
+		<div class="radiobutton">
+			<input type="radio" name="searchstudy" value="yes">Проживавших в Америке / готовившихся к сдаче американских экзаменов<br>
+		</div>
+		<div class="radiobutton">
+			<input type="radio" name="searchstudy" value="no">НЕ проживавших в Америке и НЕ готовившихся к сдаче американских экзаменов<br>
+		</div>
+		<div class="submitbutton">
+			<input type="submit" value="Поиск">
+		</div>
+	</div>
+</form>
+
+</body>
+</html>

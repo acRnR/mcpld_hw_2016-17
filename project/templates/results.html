@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Результаты поиска</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1>Результаты поиска</h1>
+{% for el in arr %}
+<div class="answer">
+	<p>{{ el[0] }}</p>
+	{% if el[1] == 'yes' %}
+		<p>Жил(а) в Америке / готовился(ась) к американским экзаменам</p>
+	{% else %}
+		<p>Не жил(а) в Америке и не готовился(ась) к американским экзаменам</p>
+	{% endif %}
+
+	<div class="resultinfo">
+	<p>
+		Любимый, предпочитаемый: {{el[2]}}<br>
+		Цвет: {{el[3]}}<br>
+		Диалог: {{el[4]}}<br>
+		Каталог: {{el[5]}}<br>
+		Театр: {{el[6]}}<br>
+		Центр: {{el[7]}}<br>
+		Организовать: {{el[8]}}<br>
+		Опознать, узнать, отличить: {{el[9]}}<br>
+		Защита: {{el[10]}}<br>
+		Серый: {{el[11]}}<br>
+		Квартира: {{el[12]}}<br>
+		Ластик: {{el[13]}}<br>
+		Лифт: {{el[14]}}<br>
+		Мусор: {{el[15]}}<br>
+		Очередь: {{el[16]}}<br>
+		Почта: {{el[17]}}<br>
+		Расписание: {{el[18]}}<br>
+		Фонарик: {{el[19]}}<br>
+		Bathroom: {% if el[20]|length == 6 %}Британский вариант{% elif else %}Американский вариант{% endif %}<br>
+		Chips: {% if el[21]|length == 6 %}Британский вариант{% else %}Американский вариант{% endif %}<br>
+	</p>
+	</div>
+</div>
+{% endfor %}
+
+<a href="{{ again_refer }}">Заполнить анкету еще раз</a>
+<a href="{{ search_refer }}">Вернуться к поиску</a>
+<a href="{{ stats_refer }}">Вернуться к общей статистике</a>
+<a href="{{ json_refer }}">В формате JSON</a>
+
+</body>
+</html>

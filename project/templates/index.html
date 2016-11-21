@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Анкета</title>
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+<h1>Анкета</h1>
+</div>
+<form method="GET">
+	<div class="question">
+		<p>Как Вас зовут?  <input type="text" name="name"></p>
+
+
+		<p>Вы когда-нибудь жили в Америке/сдавали(собирались сдавать) американские экзамены (в т.ч. на уровень языка)?</p>
+		<input type="radio" name="study" value="yes">Да<br>
+		<input type="radio" name="study" value="no">Нет<br>
+	</div>
+	<div class="paragr">
+		<p>Вам будут даны слова для перевода с русского языка на английский. В скобках приводится контекст для более точного понимания слова.<br>
+			Контекст переводить не надо. Введите перевод.</p>
+	</div>
+ <!-- ortho gue-->
+	<div class="question">
+		<p>диалог</p>
+		<input type="text" name="ortho1"><br>
+	</div>
+		<!-- ortho random-->
+	<div class="question">
+		<p>защита</p>
+		<input type="text" name="ortho2"><br>
+	</div>
+<!-- ortho gue-->
+	<div class="question">
+		<p>каталог</p>
+		<input type="text" name="ortho3"><br>
+	</div>
+ <!-- lex-->
+	<div class="question">
+		<p>квартира</p>
+		<input type="text" name="lex1"><br>
+	</div>
+ <!-- lex-->
+	<div class="question">
+		<p>ластик</p>
+		<input type="text" name="lex2"><br>
+	</div>
+ <!-- lex-->
+	<div class="question">
+		<p>лифт</p>
+		<input type="text" name="lex3"><br>
+	</div>
+ <!-- ortho our-->
+	<div class="question">
+		<p>любимый, предпочитаемый</p>
+		<input type="text" name="ortho4" size="30"><br>
+	</div>
+ <!-- ortho erre-->
+ <!-- lex-->
+	<div class="question">
+		<p>мусор</p>
+		<input type="text" name="lex4"><br>
+	</div>
+ <!-- ortho iseize-->
+	<div class="question">
+		<p>организовать</p>
+		<input type="text" name="ortho5"><br>
+	</div>
+ <!-- ortho iseize-->
+	<div class="question">
+		<p>опознать, узнать, отличить.</p>
+		<input type="text" name="ortho6" size="30"><br>
+	</div>
+ <!-- lex-->
+	<div class="question">
+		<p>очередь (в кассу)</p>
+		<input type="text" name="lex5"><br>
+	</div>
+ <!-- ortho random-->
+	<div class="question">
+		<p>почта</p>
+		<input type="text" name="lex6"><br>
+	</div>
+ <!-- ortho random-->
+	<div class="question">
+		<p>расписание</p>
+		<input type="text" name="lex7"><br>
+	</div>
+ <!-- ortho random-->
+	<div class="question">
+		<p>серый</p>
+		<input type="text" name="ortho7"><br>
+	</div>
+ <!-- ortho our-->
+	<div class="question">
+		<p>театр</p>
+		<input type="text" name="ortho8"><br>
+	</div>
+ <!-- lex-->
+	<div class="question">
+		<p>фонарик (ручной на батарейке)</p>
+		<input type="text" name="lex8" size="32"><br>
+ 	</div>
+		<!-- ortho erre-->
+	<div class="question">
+		<p>центр</p>
+		<input type="text" name="ortho9"><br>
+ 	</div>
+		<!-- ortho our-->
+	<div class="question">
+		<p>цвет</p>
+		<input type="text" name="ortho10"><br>
+	</div>
+	<div class="paragr">
+		<p>Вам будет предложено выбрать картинку, которая больше подходит для объяснения данного слова</p>
+	</div>
+	<div class="question">
+		<div class="bath">
+		<p>bathroom</p>
+		<div class="radiobutton">
+			<input type="radio" name="lex9" value="b_bri"><img src="static/bathroombr.jpg" />
+		</div>
+		<div class="radiobutton">
+			<input type="radio" name="lex9" value="b_amer"><img src="static/bathroomam.jpg" /><br>
+		</div>
+		</div>
+	</div>
+	<div class="question">
+		<div class="bath">
+			<p>chips</p>
+			<div class="radiobutton">
+				<input type="radio" name="lex10" value="c_bri"><img src="static/chipsbr.jpg" />
+			</div>
+			<div class="radiobutton">
+				<input type="radio" name="lex10" value="c_amer"><img src="static/chipsam.jpg" /><br>
+			</div>
+		</div>
+	</div>
+
+	<div class="submitbutton">
+	<input type="submit" value="Подтвердить" size="70"><br>
+	</div>
+</form>
+</body>
+</html>
