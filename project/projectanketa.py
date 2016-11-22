@@ -246,5 +246,5 @@ def results():
     return render_template('results.html', again_refer=again_refer, search_refer=search_refer, stats_refer=stats_refer, json_refer=json_refer, arr=arr)#, q2=q2, q1=q1)#, #letstry = ln)
 
 if __name__ == '__main__':
-    #make_head()
+    make_head()
     app.run(debug=True)
