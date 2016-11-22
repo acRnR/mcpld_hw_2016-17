@@ -9,6 +9,14 @@
 <body>
 
 <h1>Статистика</h1>
+<p>
+	Всего анкета заполнена {{ n }} раз.<br>
+	В анкете было задано 10 вопросов на spelling (орфографию) и 10 вопросов на vocabulary (лексику)<br>
+	Таблицы показывают, сколько слов той или иной категории, введенных респондентами,<br>
+	соответствуют норме британского или американского диалекта английского языка.<br>
+	Возможны погрешности в расчетах, заметные особенно в процентном выражении. Они<br>
+	могут быть связаны с вводом респондентами совсем неправильных переводов.
+</p>
 <table>
 	<thead>
 	<tr>
@@ -57,6 +65,7 @@
 		<th scope="col">Spelling</th>
 		<th scope="col">Vocabulary</th>
 		<th scope="col">Total</th>
+		<th scope="col">Per cent</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -65,12 +74,15 @@
 		<td>{{ our_n+gue_n+re_n+ise_n+randombr_n }}</td>
 		<td>{{ lex1br_n+lex2br_n }}</td>
 		<td>{{ our_n+gue_n+re_n+ise_n+randombr_n+lex1br_n+lex2br_n }}</td>
+		<td>{{ (100*(our_n+gue_n+re_n+ise_n+randombr_n+lex1br_n+lex2br_n))//(n*20) }}</td>
 	</tr>
 	<tr>
 		<th scope="row">American Dialect</th>
 		<td>{{ or_n+g_n+er_n+ize_n+randomam_n }}</td>
 		<td>{{ lex1am_n+lex2am_n }}</td>
 		<td>{{ or_n+g_n+er_n+ize_n+randomam_n+lex1am_n+lex2am_n }}</td>
+		<td>{{ (100*(or_n+g_n+er_n+ize_n+randomam_n+lex1am_n+lex2am_n))//(n*20) }}</td>
+
 	</tr>
 	</tbody>
 </table>

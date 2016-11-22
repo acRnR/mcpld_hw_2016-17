@@ -39,13 +39,13 @@
 		Расписание: {{el[18]}}<br>
 		Фонарик: {{el[19]}}<br>
 		Bathroom: {% if el[20]|length == 6 %}Британский вариант{% elif else %}Американский вариант{% endif %}<br>
-		Chips: {% if el[21]|length == 6 %}Британский вариант{% else %}Американский вариант{% endif %}<br>
+		Chips: {% if el[21]|length == 6 %}Британский вариант{% else %}Американский вариант{% endif %}
 	</p>
 	</div>
 </div>
 {% endfor %}
 
-<a href="{{ again_refer }}">Заполнить анкету еще раз</a>
+<br><a href="{{ again_refer }}">Заполнить анкету еще раз</a>
 <a href="{{ search_refer }}">Вернуться к поиску</a>
 <a href="{{ stats_refer }}">Вернуться к общей статистике</a>
 <a href="{{ json_refer }}">В формате JSON</a>

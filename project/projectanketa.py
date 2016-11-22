@@ -14,9 +14,11 @@ def make_head():
 def data_stat():
     f = open('backup.txt', 'r', encoding='UTF-8')
     for_table = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+    res_n = 0
     for line in f:
         if 'orth' in line:
             continue
+        res_n += 1
         arr = line.split('\t')
         #print(arr)
         functions = [our_or(arr), gue_g(arr), re_er(arr), ise_ize(arr), random_orth(arr), lex_tran(arr), lex_radio(arr)]
@@ -24,12 +26,9 @@ def data_stat():
             for_table[i][0] += functions[i][0]
             for_table[i][1] += functions[i][1]
             i += 1
-    #sumup = [0, 0]
-    #for item in for_table:
-     #   sumup[0] += item[0]
-      #  sumup[1] += item[1]
+
     f.close()
-    return for_table#, sumup
+    return for_table, res_n#, sumup
 def our_or(arr):
     a = [arr[5], arr[11]]
     #print(a)
@@ -184,10 +183,10 @@ def stats():
     again_refer = url_for('index')
     search_refer = url_for('sear')
     json_refer = url_for('jsonres')
-    t = data_stat()
+    t, n = data_stat()
     #our_n, or_n, gue_n, g_n, re_n, er_n, ise_n, ize_n, randombr_n, randomam_n, lex1br_n, lex1am_n, lex2br_n, lex2am_n = t[0][0], t[0][1], t[1][0], t[1][1], t[2][0], t[2][1], t[3][0], t[3][1], t[4][0], t[4][1], t[5][0], t[5][1], t[6][0], t[6][1]
     #print(json_refer)
-    return render_template('statistics.html',again_refer=again_refer, search_refer=search_refer, json_refer=json_refer, our_n=t[0][0], gue_n=t[1][0], re_n=t[2][0], ise_n=t[3][0], randombr_n=t[4][0], lex1br_n=t[5][0], lex2br_n=t[6][0], or_n=t[0][1], g_n=t[1][1], er_n=t[2][1], ize_n=t[3][1], randomam_n=t[4][1], lex1am_n=t[5][1], lex2am_n=t[6][1])
+    return render_template('statistics.html',n=n, again_refer=again_refer, search_refer=search_refer, json_refer=json_refer, our_n=t[0][0], gue_n=t[1][0], re_n=t[2][0], ise_n=t[3][0], randombr_n=t[4][0], lex1br_n=t[5][0], lex2br_n=t[6][0], or_n=t[0][1], g_n=t[1][1], er_n=t[2][1], ize_n=t[3][1], randomam_n=t[4][1], lex1am_n=t[5][1], lex2am_n=t[6][1])
 
 @app.route('/json')
 def jsonres():
