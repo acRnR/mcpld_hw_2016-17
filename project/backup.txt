@@ -8,3 +8,4 @@ Ann	no	dialogue	defence	catalog	favourite	organise	recognize	grey	theatre	centre
 Dan	no	dialogue	defense	catalogue	favourite	organize	recognize	gray	theater	center	colour	appartment	rubber	lift	rubbish	queue	post	timetable	torch	b_bri	c_bri
 Маша	no	dialogue	defense	catalog	favorite	organize	recognize	gray	theater	centre	colour	appartment	rubber	lift	rubbish	line	mail	schedule	flashlight	b_amer	c_amer
 Марь Иванна	no	dialogue	defence	catalogue	favourite	organize	recognize	gray	theatre	centre	colour	flat	rubber	lift	rubbish	line	post	timetable	torch	b_bri	c_amer
+Женя	yes	dialog	defence	catalog	favourite	organize	recognize	grey	theater	center	colour	appartment	eraser	lift	trash	line	mail	timetable	torch	b_amer	c_amer

@@ -7,8 +7,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
 	<link href="/static/style.css" type="text/css" rel="stylesheet">
 </head>
+
 <body>
+
 <h1>Результаты поиска</h1>
+
 {% for el in arr %}
 <div class="answer">
 	<p>{{ el[0] }}</p>
@@ -20,16 +23,16 @@
 
 	<div class="resultinfo">
 	<p>
-		Любимый, предпочитаемый: {{el[2]}}<br>
-		Цвет: {{el[3]}}<br>
-		Диалог: {{el[4]}}<br>
-		Каталог: {{el[5]}}<br>
-		Театр: {{el[6]}}<br>
-		Центр: {{el[7]}}<br>
-		Организовать: {{el[8]}}<br>
-		Опознать, узнать, отличить: {{el[9]}}<br>
-		Защита: {{el[10]}}<br>
-		Серый: {{el[11]}}<br>
+		Любимый, предпочитаемый: {{el[5]}}<br>
+		Цвет: {{el[11]}}<br>
+		Диалог: {{el[2]}}<br>
+		Каталог: {{el[4]}}<br>
+		Театр: {{el[9]}}<br>
+		Центр: {{el[10]}}<br>
+		Организовать: {{el[6]}}<br>
+		Опознать, узнать, отличить: {{el[7]}}<br>
+		Защита: {{el[3]}}<br>
+		Серый: {{el[8]}}<br>
 		Квартира: {{el[12]}}<br>
 		Ластик: {{el[13]}}<br>
 		Лифт: {{el[14]}}<br>
