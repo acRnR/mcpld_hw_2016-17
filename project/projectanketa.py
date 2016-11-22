@@ -83,7 +83,7 @@ def re_er(arr):
 
 def ise_ize(arr):
     #Британский вариант organise recognise, Американский вариант organize recognize
-    a = [arr[7], arr[8]]
+    a = [arr[6], arr[7]]
     brit = 0
     amer = 0
     for el in a:
@@ -178,7 +178,10 @@ def stats():
     search_refer = url_for('sear')
     json_refer = url_for('jsonres')
     t, n = data_stat()
-    return render_template('statistics.html',n=n, again_refer=again_refer, search_refer=search_refer, json_refer=json_refer, our_n=t[0][0], gue_n=t[1][0], re_n=t[2][0], ise_n=t[3][0], randombr_n=t[4][0], lex1br_n=t[5][0], lex2br_n=t[6][0], or_n=t[0][1], g_n=t[1][1], er_n=t[2][1], ize_n=t[3][1], randomam_n=t[4][1], lex1am_n=t[5][1], lex2am_n=t[6][1])
+    if n != 0:
+        return render_template('statistics.html',n=n, again_refer=again_refer, search_refer=search_refer, json_refer=json_refer, our_n=t[0][0], gue_n=t[1][0], re_n=t[2][0], ise_n=t[3][0], randombr_n=t[4][0], lex1br_n=t[5][0], lex2br_n=t[6][0], or_n=t[0][1], g_n=t[1][1], er_n=t[2][1], ize_n=t[3][1], randomam_n=t[4][1], lex1am_n=t[5][1], lex2am_n=t[6][1])
+    else:
+        redirect('/')
 
 @app.route('/json')
 def jsonres():
@@ -247,4 +250,4 @@ def results():
 
 if __name__ == '__main__':
     make_head()
-    app.run(debug=True)
+    app.run()
