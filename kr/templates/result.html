@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удмуртско-русский словарь. Результат поиска.</title>
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Scada" rel="stylesheet">
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1>Результаты поиска</h1>
+    <div class="resultinfo">
+        {% if a == 0 %}
+    	<p> {{response[1]}}, {{response[0]}} </p>
+        {% else %}
+        <p> {{response}} </p>
+        {% endif %}
+    </div>
+<br><a href="{{ again_refer }}">Вернуться к поиску</a>
+</body>
+</html>
