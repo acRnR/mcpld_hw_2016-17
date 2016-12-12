@@ -74,7 +74,6 @@ def index():
 def result():
     again_refer = url_for('index')
     req = request.args['req']
-    #print(req)
     a = 0
     print(di)
     if req in di:
@@ -89,4 +88,4 @@ def result():
 if __name__ == '__main__':
     di = na_5()
     na_8(di)
-    app.run(debug=True)
+    app.run()
