@@ -1,11 +1,1 @@
 name	study	orth1	orth2	orth3	orth4	orth5	orth6	orth7	orth8	orth9	orth10	lex1	lex2	lex3	lex4	lex5	lex6	lex7	lex8	lex9	lex10
-Acia	yes	dialog	defence	catalog	favourite	organize	recognize	grey	theater	centre	colour	appartment	rubber	elevator	trash	queue	post	timetable	torch	b_amer	c_amer
-Dan	no	dialogue	defense	catalogue	favourite	organise	recognise	gray	theatre	centre	colour	flat	rubber	lift	rubbish	queue	post	timetable	torch	b_brit	c_brit
-Masha	yes	dialog	defence	catalog	favourite	organize	recognize	gray	theater	center	color	flat	eraser	elevator	trash	line	mail	schedule	flashlight	b_amer	c_amer
-Sasha	no	dialog	defence	catalog	favourite	organize	recognize	grey	theater	centre	colour	appartment	rubber	lift	trash	line	mail	timetable	torch	b_amer	c_amer
-Daniel	no	dialogue	defense	catalogue	favourite	organize	recognize	gray	theatre	centre	colour	appartment	rubber	lift	trash	queue	mail	timetable	flashlight	b_amer	c_amer
-Ann	no	dialogue	defence	catalog	favourite	organise	recognize	grey	theatre	centre	colour	flat	eraser	elevator	garbage	line	mail	schedule	flashlight	b_amer	c_amer
-Dan	no	dialogue	defense	catalogue	favourite	organize	recognize	gray	theater	center	colour	appartment	rubber	lift	rubbish	queue	post	timetable	torch	b_bri	c_bri
-Маша	no	dialogue	defense	catalog	favorite	organize	recognize	gray	theater	centre	colour	appartment	rubber	lift	rubbish	line	mail	schedule	flashlight	b_amer	c_amer
-Марь Иванна	no	dialogue	defence	catalogue	favourite	organize	recognize	gray	theatre	centre	colour	flat	rubber	lift	rubbish	line	post	timetable	torch	b_bri	c_amer
-Женя	yes	dialog	defence	catalog	favourite	organize	recognize	grey	theater	center	colour	appartment	eraser	lift	trash	line	mail	timetable	torch	b_amer	c_amer
